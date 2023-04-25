@@ -6,7 +6,7 @@ public class SimpleRandomMovingStrategy implements MovingStrategy {
 
     private final int threshold;
     private final int randomRange;
-    private final Random random = new Random();
+    private static final Random random = new Random();
 
     public SimpleRandomMovingStrategy() {
         this(4, 10);
