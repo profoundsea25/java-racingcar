@@ -9,7 +9,7 @@ public class GameLauncher {
 
     public static void main(String[] args) {
         Cars cars = new Cars();
-        SimpleResultView raceResult = new SimpleResultView("-");
+        ResultView resultView = new SimpleResultView("-");
 
         List<String> names = View.getNameOfCars();
         int tryCount = View.getTryCount();
@@ -18,7 +18,7 @@ public class GameLauncher {
         cars.setUp(names, new SimpleRandomMovingStrategy());
         for (int i = 0; i < tryCount; i++) {
             cars.race();
-            View.printEachResult(cars.getNowResult(raceResult));
+            View.printEachResult(resultView.makeResultView(cars.getNowResult()));
         }
         View.printWinner(cars.getWinners());
     }

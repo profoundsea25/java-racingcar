@@ -1,6 +1,10 @@
 package step5.view;
 
+import step5.domain.dto.RaceResultDto;
+
+import java.util.List;
+
 @FunctionalInterface
 public interface ResultView {
-    String makeResult(String name, int position);
+    List<String> makeResultView(List<RaceResultDto> raceResultDto);
 }

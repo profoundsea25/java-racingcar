@@ -1,7 +1,7 @@
 package step5.domain;
 
+import step5.domain.dto.RaceResultDto;
 import step5.domain.stretagy.MovingStrategy;
-import step5.view.ResultView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,11 +22,10 @@ public class Cars {
         }
     }
 
-    public List<String> getNowResult(ResultView resultView) {
-        List<String> nowResultList = new ArrayList<>();
+    public List<RaceResultDto> getNowResult() {
+        List<RaceResultDto> nowResultList = new ArrayList<>();
         for (Car car : carList) {
-            String eachResult = resultView.makeResult(car.getName(), car.getNowPosition());
-            nowResultList.add(eachResult);
+            nowResultList.add(new RaceResultDto(car.getName(), car.getNowPosition()));
         }
         return nowResultList;
     }
